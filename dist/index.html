@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <!--  Favicon Configuration-->
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="./assets/favicon/site.webmanifest">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="./assets/css/style.css"/>
+  <link rel="stylesheet" href="./assets/css/bulma.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <title>Sycan To-Do</title>
+</head>
+<body>
+<div class="container is-fluid mt-4">
+  <div class="card main-content">
+    <div class="card-content">
+      <p class="title">Sycan To-Do</p>
+      <a id="gh-link" href="https://github.com/sycancodes/sycan-todo-app" target="_blank" style="float: right;">
+        <span id="gh-span-link">View on GitHub</span>
+        <span class="icon is-medium">
+          <span class="icon">
+            <i class="fab fa-lg fa-github"></i>
+          </span>
+        </span>
+      </a>
+      <p class="subtitle">Learning the Basics of the IndexedDB API!</p>
+      
+      <hr/>
+      <p class="is-size-4" style="text-align: end;">Create a New Task</p>
+      <form autocomplete="off" id="save-task">
+        <div class="field is-horizontal">
+          <div class="field">
+            <label class="label">Title *</label>
+            <div class="control">
+              <input id="itTitle" class="input is-expanded" type="text" placeholder="Enter task name" required />
+            </div>
+          </div>
+  
+          <div class="field">
+            <label class="label">Date</label>
+            <div class="control">
+              <input id="itDeadline" class="input is-expanded" type="date" />
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Description</label>
+          <div class="control">
+            <textarea id="itDescription" class="textarea"
+                      placeholder="Enter description of the task"
+            ></textarea>
+          </div>
+        </div>
+
+        <p class="field help">
+          * indicates a required field
+        </p>
+
+        <div class="field is-grouped">
+          <div class="control">
+            <button id="btnCreate" type="submit" class="button is-primary is-light">Create</button>
+          </div>
+          <div class="control">
+            <button id="btnReset" type="reset" class="button is-danger is-light">Reset</button>
+          </div>
+        </div>
+      </form>
+      <hr/>
+      <p class="is-size-4" style="text-align: end;">My Tasks</p>
+      <div id="task-container" class="mt-5">
+        <p>There are no tasks to be shown.</p>
+      </div>
+    </div>
+  </div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <button class="delete close"></button>
+      <form autocomplete="off" id="task-edit">
+        <div class="field">
+          <label class="label">Title</label>
+          <div class="control">
+            <input id="editTitle" class="input" type="text" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Description</label>
+          <div class="control">
+            <textarea id="editDescription" class="textarea"></textarea>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Deadline</label>
+          <div class="control">
+            <input id="editDeadline" class="input" type="date" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="checkbox">
+            <input type="checkbox" id="editDone">
+            Done
+          </label>
+        </div>
+
+        <div class="field is-grouped">
+          <div class="control">
+            <button id="btnsave" type="submit" class="button is-primary">Save Changes</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+<script src="main.js"></script>
+<script>
+  if (window.innerWidth <= 400) {
+    document.querySelector(".container").classList.remove("is-fluid", "mt-4");
+    document.querySelector(".title").classList.add("is-4");
+    document.querySelector(".subtitle").classList.add("is-6");
+  } else {
+    document.querySelector(".container").classList.add("is-fluid", "mt-4");
+    document.querySelector(".title").classList.remove("is-4");
+    document.querySelector(".subtitle").classList.remove("is-6");
+  }
+</script>
+</body>
+</html>
