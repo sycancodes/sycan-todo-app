@@ -14,3 +14,6 @@ I found a tutorial on how to build this project on **DEV**. It teaches the basic
 - **Show saved tasks**: Everytime the page loads it will query the indexed database to get all saved tasks and display them as panels at the bottom of the page.
 - **Edit a task**: You can edit any given task at any given moment.
 - **Toggle the "done" status of a task**: You can toggle whether a task is "done" via either a checkbox or while editing the task.
+
+# View Live App
+[VIEW ON NETLIFY](https://sycan-todo-app.netlify.app/)
